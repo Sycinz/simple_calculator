@@ -16,5 +16,8 @@ fn main() {
 
     let result = eval(&user_input);
 
-    println!("Here's your result: {:?}", result); 
+    match result {
+        Ok(Value::Number(num)) => println!("Here's your result: {}", num),
+        _ => println!("Error or unsupported data type.")
+    };
 }
